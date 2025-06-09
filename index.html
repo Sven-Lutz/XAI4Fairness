@@ -3,37 +3,69 @@ layout: default
 title: Startseite
 ---
 
-<h2>Willkommen auf unserer Teamseite</h2>
-<p>Hier folgt bald ein kurzer Vorstellungstext unseres Projekts und Teams.</p>
+<h2>Willkommen auf unserer XAI4Fairness-Teamseite</h2>
+<p>
+  Diese Seite gibt einen Überblick über zentrale XAI-Methoden im Kontext von Fairness.
+  Trage deine Einschätzungen in die untenstehende Tabelle ein – wir werten die Ergebnisse aus
+  und schicken dir eine Rückmeldung.
+</p>
 
-<hr />
+<hr>
 
-<div id="formular-bereich">
-  <h3>📋 Teilnahmeformular</h3>
-  <form action="https://formspree.io/f/xblygovq" method="POST">
-    <label>Name:<br /><input type="text" name="name" required /></label
-    ><br /><br />
-    <label>Email:<br /><input type="email" name="email" required /></label
-    ><br /><br />
-    <label
-      >Nachricht:<br /><textarea
-        name="message"
-        rows="4"
-        required
-      ></textarea></label
-    ><br /><br />
+<h3>📊 Interaktive Tabelle zur Fairness-Einschätzung</h3>
 
-    <!-- Teilnehmer erhält Kopie -->
-    <label>
-      <input type="checkbox" name="_cc" value="true" /> Ich möchte eine Kopie
-      erhalten </label
-    ><br /><br />
+<style>
+  table.xai-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2em;
+    font-family: sans-serif;
+  }
+  table.xai-table th,
+  table.xai-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: top;
+  }
+  table.xai-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+    font-weight: bold;
+  }
+</style>
 
-    <button type="submit">Absenden</button>
-  </form>
+<form action="https://formspree.io/f/xblygovq" method="POST">
+  <table class="xai-table">
+    <thead>
+      <tr>
+        <th>XAI Method</th>
+        <th>Claim</th>
+        <th>Fairness Desideratum</th>
+        <th>Stakeholder</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="method1" required style="width: 100%"></td>
+        <td><input type="text" name="claim1" required style="width: 100%"></td>
+        <td><input type="text" name="fairness1" required style="width: 100%"></td>
+        <td><input type="text" name="stakeholder1" required style="width: 100%"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="method2" style="width: 100%"></td>
+        <td><input type="text" name="claim2" style="width: 100%"></td>
+        <td><input type="text" name="fairness2" style="width: 100%"></td>
+        <td><input type="text" name="stakeholder2" style="width: 100%"></td>
+      </tr>
+    </tbody>
+  </table>
 
-  <p style="margin-top: 1em; font-size: 0.9em">
-    Mit dem Absenden erklärst du dich einverstanden, dass deine Daten über
-    Formspree verarbeitet werden.
-  </p>
-</div>
+  <label>Dein Name:<br><input type="text" name="name" required></label><br><br>
+  <label>Deine Email:<br><input type="email" name="email" required></label><br><br>
+
+  <button type="submit">📩 Absenden</button>
+</form>
+
+<p style="margin-top: 1em; font-size: 0.9em;">
+  Mit dem Absenden erklärst du dich einverstanden, dass deine Eingaben gespeichert und ausgewertet werden.
+</p>
