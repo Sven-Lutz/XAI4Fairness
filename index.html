@@ -1,0 +1,39 @@
+---
+layout: default
+title: Startseite
+---
+
+<h2>Willkommen auf unserer Teamseite</h2>
+<p>Hier folgt bald ein kurzer Vorstellungstext unseres Projekts und Teams.</p>
+
+<hr />
+
+<div id="formular-bereich">
+  <h3>📋 Teilnahmeformular</h3>
+  <form action="https://formspree.io/f/xblygovq" method="POST">
+    <label>Name:<br /><input type="text" name="name" required /></label
+    ><br /><br />
+    <label>Email:<br /><input type="email" name="email" required /></label
+    ><br /><br />
+    <label
+      >Nachricht:<br /><textarea
+        name="message"
+        rows="4"
+        required
+      ></textarea></label
+    ><br /><br />
+
+    <!-- Teilnehmer erhält Kopie -->
+    <label>
+      <input type="checkbox" name="_cc" value="true" /> Ich möchte eine Kopie
+      erhalten </label
+    ><br /><br />
+
+    <button type="submit">Absenden</button>
+  </form>
+
+  <p style="margin-top: 1em; font-size: 0.9em">
+    Mit dem Absenden erklärst du dich einverstanden, dass deine Daten über
+    Formspree verarbeitet werden.
+  </p>
+</div>
