@@ -1,4 +1,3 @@
 title: XAI4Fairness
-description: Projektseite zu Fairness & Explainable AI
-baseurl: "/XAI4Fairness" # ← wichtig für Projektseiten
-
+baseurl: "/XAI4Fairness"   # ← ganz wichtig bei Projektseiten!
+url: "https://svenlutz.github.io"
