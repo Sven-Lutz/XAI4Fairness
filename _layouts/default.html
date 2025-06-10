@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +13,14 @@
         margin: 0;
         font-family: sans-serif;
         display: flex;
+        flex-direction: column;
         min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
       }
 
       .sidebar {
@@ -47,72 +54,68 @@
       header {
         position: fixed;
         top: 0;
-        left: 250px;
+        left: 0;
         right: 0;
         background: white;
         border-bottom: 1px solid #ccc;
-        padding: 20px 40px;
+        padding: 15px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 1000;
-      }
-
-      .site-title {
-        text-align: left;
+        flex-wrap: wrap;
       }
 
       .site-title h1 {
         margin: 0;
-        font-size: 1.8em;
+        font-size: 1.5em;
       }
 
       .site-title p {
         margin: 5px 0 0 0;
-        font-size: 0.95em;
+        font-size: 0.9em;
         color: #666;
       }
 
       nav a {
-        margin-left: 2em;
+        margin-left: 1.5em;
         text-decoration: none;
         color: black;
         font-weight: bold;
       }
 
       .content {
+        padding: 140px 2em 2em 2em;
         flex: 1;
-        padding: 140px 2em 2em 2em; /* Abstand oben für Header */
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #ccc;
+        }
+
+        .content {
+          padding: 160px 1em 2em 1em;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Seitenleiste -->
-    <div class="sidebar">
-      <div class="member">
-        <img src="{{ site.baseurl }}/assets/img/person1.jpg" alt="Luca Deck" />
-        <strong>Luca Deck</strong>
-        <a href="mailto:luca.deck@fim-rc.de">✉️ Email</a>
-        <a href="https://www.linkedin.com/in/luca-deck/" target="_blank"
-          >🔗 LinkedIn</a
-        >
-        <a href="https://lucad98.github.io/" target="_blank">🌐 Website</a>
-      </div>
-      <div class="member">
-        <img
-          src="{{ site.baseurl }}/assets/img/person2.jpg"
-          alt="Niklas Kühl"
-        />
-        <strong>Niklas Kühl</strong>
-        <a href="mailto:niklas.kuehl@fim-rc.de">✉️ Email</a>
-        <a href="https://www.linkedin.com/in/niklaskuehl/" target="_blank"
-          >🔗 LinkedIn</a
-        >
-        <a href="https://nkukit.github.io/" target="_blank">🌐 Website</a>
-      </div>
-    </div>
-
-    <!-- Kopfzeile -->
     <header>
       <div class="site-title">
         <h1>Explainable AI for Fairness</h1>
@@ -124,7 +127,37 @@
       </nav>
     </header>
 
-    <!-- Hauptinhalt -->
-    <div class="content">{{ content }}</div>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="member">
+          <img
+            src="{{ site.baseurl }}/assets/img/person1.jpg"
+            alt="Luca Deck"
+          />
+          <strong>Luca Deck</strong>
+          <a href="mailto:luca.deck@fim-rc.de">✉️ Email</a>
+          <a href="https://www.linkedin.com/in/luca-deck/" target="_blank"
+            >🔗 LinkedIn</a
+          >
+          <a href="https://lucad98.github.io/" target="_blank">🌐 Website</a>
+        </div>
+        <div class="member">
+          <img
+            src="{{ site.baseurl }}/assets/img/person2.jpg"
+            alt="Niklas Kühl"
+          />
+          <strong>Niklas Kühl</strong>
+          <a href="mailto:niklas.kuehl@fim-rc.de">✉️ Email</a>
+          <a href="https://www.linkedin.com/in/niklaskuehl/" target="_blank"
+            >🔗 LinkedIn</a
+          >
+          <a href="https://nkukit.github.io/" target="_blank">🌐 Website</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content">{{ content }}</div>
+    </div>
   </body>
 </html>
