@@ -17,14 +17,31 @@
         top: 0;
         left: 250px;
         right: 0;
-        height: 60px;
+        height: 100px;
         background: #fff;
         border-bottom: 1px solid #ccc;
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 0 2em;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 2em;
         z-index: 1000;
+      }
+
+      header .top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      header .title {
+        font-size: 1.8em;
+        font-weight: bold;
+      }
+
+      header .subtitle {
+        margin-top: 0.25em;
+        font-size: 0.95em;
+        color: #666;
       }
 
       header nav a {
@@ -62,12 +79,12 @@
 
       .content {
         flex: 1;
-        padding: 100px 2em 2em 2em; /* Platz für festen Header */
+        padding: 130px 2em 2em 2em; /* Platz für Header */
       }
     </style>
   </head>
   <body>
-    <!-- Sidebar mit Teammitgliedern -->
+    <!-- Linke Seitenleiste -->
     <div class="sidebar">
       <div class="member">
         <img src="{{ site.baseurl }}/assets/img/person1.jpg" alt="Luca Deck" />
@@ -92,15 +109,21 @@
       </div>
     </div>
 
-    <!-- Obere Navigationsleiste -->
+    <!-- Oberer Headerbereich mit Titel und Navigation -->
     <header>
-      <nav>
-        <a href="{{ site.baseurl }}/">🏠 Front page</a>
-        <a href="{{ site.baseurl }}/research/">📚 Research</a>
-      </nav>
+      <div class="top-row">
+        <div class="title">Explainable AI for Fairness</div>
+        <nav>
+          <a href="{{ site.baseurl }}/">🏠 Front page</a>
+          <a href="{{ site.baseurl }}/research/">📚 Research</a>
+        </nav>
+      </div>
+      <div class="subtitle">
+        Welcome to our academic website on XAI & Fairness
+      </div>
     </header>
 
-    <!-- Inhaltsbereich -->
+    <!-- Hauptinhalt -->
     <div class="content">{{ content }}</div>
   </body>
 </html>
