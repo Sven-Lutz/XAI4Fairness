@@ -5,50 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }} – XAI4Fairness</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
         font-family: sans-serif;
         display: flex;
         min-height: 100vh;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        left: 250px;
-        right: 0;
-        height: 100px;
-        background: #fff;
-        border-bottom: 1px solid #ccc;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px 2em;
-        z-index: 1000;
-      }
-
-      header .top-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-
-      header .title {
-        font-size: 1.8em;
-        font-weight: bold;
-      }
-
-      header .subtitle {
-        margin-top: 0.25em;
-        font-size: 0.95em;
-        color: #666;
-      }
-
-      header nav a {
-        margin-left: 2em;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
       }
 
       .sidebar {
@@ -62,7 +27,9 @@
 
       .sidebar img {
         width: 100px;
+        height: 100px;
         border-radius: 50%;
+        object-fit: cover;
         margin-bottom: 10px;
       }
 
@@ -77,14 +44,50 @@
         margin: 5px 0;
       }
 
+      header {
+        position: fixed;
+        top: 0;
+        left: 250px;
+        right: 0;
+        background: white;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .site-title {
+        text-align: left;
+      }
+
+      .site-title h1 {
+        margin: 0;
+        font-size: 1.8em;
+      }
+
+      .site-title p {
+        margin: 5px 0 0 0;
+        font-size: 0.95em;
+        color: #666;
+      }
+
+      nav a {
+        margin-left: 2em;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
       .content {
         flex: 1;
-        padding: 130px 2em 2em 2em; /* Platz für Header */
+        padding: 140px 2em 2em 2em; /* Abstand oben für Header */
       }
     </style>
   </head>
   <body>
-    <!-- Linke Seitenleiste -->
+    <!-- Seitenleiste -->
     <div class="sidebar">
       <div class="member">
         <img src="{{ site.baseurl }}/assets/img/person1.jpg" alt="Luca Deck" />
@@ -109,18 +112,16 @@
       </div>
     </div>
 
-    <!-- Oberer Headerbereich mit Titel und Navigation -->
+    <!-- Kopfzeile -->
     <header>
-      <div class="top-row">
-        <div class="title">Explainable AI for Fairness</div>
-        <nav>
-          <a href="{{ site.baseurl }}/">🏠 Front page</a>
-          <a href="{{ site.baseurl }}/research/">📚 Research</a>
-        </nav>
+      <div class="site-title">
+        <h1>Explainable AI for Fairness</h1>
+        <p>Welcome to our academic website on XAI & Fairness</p>
       </div>
-      <div class="subtitle">
-        Welcome to our academic website on XAI & Fairness
-      </div>
+      <nav>
+        <a href="{{ site.baseurl }}/">🏠 Front page</a>
+        <a href="{{ site.baseurl }}/research/">📚 Research</a>
+      </nav>
     </header>
 
     <!-- Hauptinhalt -->
