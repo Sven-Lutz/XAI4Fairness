@@ -28,101 +28,99 @@ title: Frontpage
     font-family: sans-serif;
     font-size: 0.95em;
   }
+
   table.xai-table th,
   table.xai-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     vertical-align: top;
-  }
-  table.xai-table th {
-    background-color: #f4f4f4;
     text-align: left;
+  }
+
+  table.xai-table th {
+    background-color: #f0efea;
     font-weight: bold;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
   }
 </style>
 
-<form action="https://formspree.io/f/xblygovq" method="POST">
-  <table class="xai-table">
-    <thead>
-      <tr>
-        <th>XAI Method</th>
-        <th>Claim</th>
-        <th>Fairness Desideratum<br />(Objective / Motivation)</th>
-        <th>Stakeholder</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Example / Hint Row -->
-      <tr style="background-color: #fefefe; color: #444; font-style: italic">
-        <td>Counterfactual Explanations</td>
-        <td>
-          “CFE inform and empower affected parties to improve their outcome”
-        </td>
-        <td>
-          Facilitate recourse<br />Motivation: Procedural justice theory,
-          advocacy
-        </td>
-        <td>Affected parties</td>
-      </tr>
+<table class="xai-table">
+  <thead>
+    <tr>
+      <th>XAI Method</th>
+      <th>Fairness Objective</th>
+      <th>Normative Background</th>
+      <th>Existing Evidence</th>
+      <th>Evaluation Design</th>
+      <th>Claim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Example row -->
+    <tr style="background-color: #fefefe; color: #444; font-style: italic">
+      <td>Counterfactual explanations</td>
+      <td>Facilitate recourse</td>
+      <td>Procedural justice theory, self-informed advocacy</td>
+      <td>
+        VanNostrand, P. et al. (2024):<br />
+        <em
+          >Actionable Recourse for Automated Decisions: Examining the Effects of
+          Counterfactual Explanation Type and Presentation on Lay User
+          Understanding.</em
+        >
+      </td>
+      <td>Difference between outcomes before and after explanations</td>
+      <td>
+        “Counterfactual explanations inform and empower affected parties to
+        improve their outcome.”
+      </td>
+    </tr>
 
-      <!-- User Input Row -->
-      <tr>
-        <td>
-          <input type="text" name="method1" required style="width: 100%" />
-        </td>
-        <td>
-          <input type="text" name="claim1" required style="width: 100%" />
-        </td>
-        <td>
-          <input type="text" name="fairness1" required style="width: 100%" />
-        </td>
-        <td>
-          <input type="text" name="stakeholder1" required style="width: 100%" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <!-- User input row -->
+    <tr>
+      <td><input type="text" name="method1" /></td>
+      <td><input type="text" name="objective1" /></td>
+      <td><input type="text" name="background1" /></td>
+      <td><input type="text" name="evidence1" /></td>
+      <td><input type="text" name="evaluation1" /></td>
+      <td><input type="text" name="claim1" /></td>
+    </tr>
+  </tbody>
+</table>
 
-  <label>Your name:<br /><input type="text" name="name" required /></label
-  ><br /><br />
-  <label>Your email:<br /><input type="email" name="email" required /></label
-  ><br /><br />
+<p style="margin-top: 2em; font-size: 0.9em; color: #555">
+  You can also download the table as a Word template for offline entry:
+</p>
 
-  <p style="font-size: 0.9em; margin-bottom: 0.5em">
-    📘 <strong>Declaration of Consent</strong>
-  </p>
-  <p style="font-size: 0.9em; margin-top: 0">
-    I voluntarily agree to participate in this survey. I am aware that the
-    survey is being conducted for research purposes.
-  </p>
-
-  <label style="font-size: 0.9em">
-    <input type="checkbox" name="consent" required />
-    I confirm that I have carefully read and understood this declaration of
-    consent and that I declare my participation in the survey on the basis of
-    this declaration. </label
-  ><br /><br />
-
-  <button type="submit">📩 Submit</button>
-
-  <p style="margin-top: 1em; font-size: 0.9em; color: #555">
-    By submitting this form, you agree to the storage and processing of your
-    data. A copy of your submission will be sent to the email address you
-    provided.
-  </p>
-
-  <h3>📄 Research Papers on XAI & Fairness</h3>
-
-  <iframe
-    src="{{ site.baseurl }}/assets/files/FAccT_2025_Tutorial__XAI_x_Fairness.pdf"
-    width="100%"
-    height="600px"
-    style="border: 1px solid #ccc"
+<p>
+  👉
+  <a href="{{ site.baseurl }}/assets/files/XAI_Fairness_Template.docx" download
+    >Download Word Template (.docx)</a
+  ><br />
+  👉
+  <a href="{{ site.baseurl }}/assets/files/XAI_Fairness_Template.pdf" download
+    >Download PDF Version</a
   >
-    PDF cannot be displayed.
-    <a
-      href="{{ site.baseurl }}/assets/files/FAccT_2025_Tutorial__XAI_x_Fairness.pdf"
-      >Download PDF</a
-    >
-  </iframe>
-</form>
+</p>
+
+<hr />
+
+<h3>📄 Research Papers on XAI & Fairness</h3>
+
+<iframe
+  src="{{ site.baseurl }}/assets/files/FAccT_2025_Tutorial__XAI_x_Fairness.pdf"
+  width="100%"
+  height="600px"
+  style="border: 1px solid #ccc"
+>
+  PDF cannot be displayed.
+  <a
+    href="{{ site.baseurl }}/assets/files/FAccT_2025_Tutorial__XAI_x_Fairness.pdf"
+    >Download PDF</a
+  >
+</iframe>
